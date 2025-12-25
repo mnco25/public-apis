@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "name": "Weather",
+      "icon": "cloud",
+      "description": "Weather forecasts, historical data, and climate information"
+    },
+    {
+      "name": "Finance & Markets",
+      "icon": "chart",
+      "description": "Stock market, cryptocurrency, and financial data"
+    },
+    {
+      "name": "Health & Medical",
+      "icon": "heart",
+      "description": "Medical information, drug data, and health services"
+    },
+    {
+      "name": "Education",
+      "icon": "book",
+      "description": "Educational resources, courses, and learning materials"
+    },
+    {
+      "name": "Transportation",
+      "icon": "car",
+      "description": "Transit, flights, traffic, and vehicle data"
+    },
+    {
+      "name": "Entertainment",
+      "icon": "play",
+      "description": "Movies, music, games, and recreational content"
+    },
+    {
+      "name": "Social Media",
+      "icon": "users",
+      "description": "Social networks and user-generated content"
+    },
+    {
+      "name": "Maps & Location",
+      "icon": "map",
+      "description": "Geolocation, mapping, and geographic data"
+    },
+    {
+      "name": "E-Commerce",
+      "icon": "shopping-cart",
+      "description": "Payment processing, products, and retail"
+    },
+    {
+      "name": "News & Information",
+      "icon": "newspaper",
+      "description": "News articles, headlines, and media"
+    },
+    {
+      "name": "Development Tools",
+      "icon": "code",
+      "description": "Developer utilities, testing, and infrastructure"
+    },
+    {
+      "name": "Communication",
+      "icon": "message",
+      "description": "Messaging, email, and voice services"
+    }
+  ]
+}

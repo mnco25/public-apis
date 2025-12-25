@@ -1,4 +1,11 @@
-# Public APIs
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.join(__dirname, '..');
+
+const readme = `# Public APIs
 
 A modern, production-ready platform for developers to discover, search, and validate public APIs across categories. Built with Next.js 14+, TypeScript, and Tailwind CSS.
 
@@ -30,7 +37,7 @@ A modern, production-ready platform for developers to discover, search, and vali
 
 ### Installation
 
-```bash
+\`\`\`bash
 # Navigate to the project
 cd public-apis
 
@@ -39,13 +46,13 @@ npm install
 
 # Start the development server
 npm run dev
-```
+\`\`\`
 
 Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Project Structure
 
-```
+\`\`\`
 public-apis/
 ├── app/                          # Next.js App Router
 │   ├── layout.tsx                # Root layout with Header/Footer
@@ -73,40 +80,40 @@ public-apis/
 └── data/                         # JSON data files
     ├── apis.json                 # API data (15 sample APIs)
     └── categories.json           # Category metadata
-```
+\`\`\`
 
 ## API Endpoints
 
 ### Search APIs
-```
+\`\`\`
 GET /api/search?search=weather&category=Weather&pricing=free&sort=fastest&page=1&limit=20
-```
+\`\`\`
 
 ### Get Categories
-```
+\`\`\`
 GET /api/categories
-```
+\`\`\`
 
 ### Validate API
-```
+\`\`\`
 POST /api/validate
 Body: { "apiId": "string", "baseUrl": "string" }
-```
+\`\`\`
 
 ### Report Issue
-```
+\`\`\`
 POST /api/report-issue
 Body: { "apiId": "string", "issueType": "broken|slow|down|incorrect_info", "description": "string" }
-```
+\`\`\`
 
 ## Available Scripts
 
-```bash
+\`\`\`bash
 npm run dev          # Start development server
 npm run build        # Build for production
 npm run start        # Start production server
 npm run lint         # Run ESLint
-```
+\`\`\`
 
 ## Design System
 
@@ -143,3 +150,7 @@ MIT License
 ---
 
 Built with care for the developer community.
+`;
+
+fs.writeFileSync(path.join(rootDir, 'README.md'), readme);
+console.log('README.md written!');
