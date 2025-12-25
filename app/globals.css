@@ -5,26 +5,28 @@
     /* Premium Cool Grays palette (Light Mode) */
     --color-bg-primary: #ffffff;
     --color-bg-secondary: #f8fafc;
-    /* Cool gray 50 */
+    /* Slate 50 */
     --color-bg-tertiary: #f1f5f9;
-    /* Cool gray 100 */
+    /* Slate 100 */
+    --color-card: #ffffff;
+    /* Card backgrounds */
 
     --color-text-primary: #0f172a;
-    /* Cool gray 900 */
+    /* Slate 900 */
     --color-text-secondary: #475569;
-    /* Cool gray 600 */
+    /* Slate 600 */
     --color-text-tertiary: #94a3b8;
-    /* Cool gray 400 */
+    /* Slate 400 */
 
     --color-border: #e2e8f0;
-    /* Cool gray 200 */
-    --color-border-light: #f8fafc;
+    /* Slate 200 */
+    --color-border-light: #f1f5f9;
     --color-border-neutral: #cbd5e1;
 
-    /* Refined Accent - Inter Blue */
+    /* Refined Accent - Blue */
     --color-accent: #2563eb;
     --color-accent-hover: #1d4ed8;
-    --color-accent-subtle: rgba(37, 99, 235, 0.1);
+    --color-accent-subtle: rgba(37, 99, 235, 0.08);
 
     /* Functional Colors */
     --color-success: #10b981;
@@ -33,61 +35,63 @@
     --color-neutral: #64748b;
 
     /* Glassmorphism & Effects */
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(226, 232, 240, 0.5);
     --glass-blur: 12px;
 
     /* Refined Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04);
 
     /* Glow Effects */
-    --glow-accent: 0 0 20px rgba(37, 99, 235, 0.3);
+    --glow-accent: 0 0 20px rgba(37, 99, 235, 0.15);
   }
 
   [data-theme='dark'] {
     /* Dark Mode (Dark Slate) */
-    --color-bg-primary: #020617;
-    /* Slate 950 */
-    --color-bg-secondary: #0f172a;
-    /* Slate 900 */
-    --color-bg-tertiary: #1e293b;
-    /* Slate 800 */
+    --color-bg-primary: #030712;
+    /* Gray 950 */
+    --color-bg-secondary: #111827;
+    /* Gray 900 */
+    --color-bg-tertiary: #1f2937;
+    /* Gray 800 */
+    --color-card: #111827;
+    /* Card backgrounds - slightly elevated */
 
-    --color-text-primary: #f8fafc;
-    /* Slate 50 */
-    --color-text-secondary: #94a3b8;
-    /* Slate 400 */
-    --color-text-tertiary: #64748b;
-    /* Slate 500 */
+    --color-text-primary: #f9fafb;
+    /* Gray 50 */
+    --color-text-secondary: #9ca3af;
+    /* Gray 400 */
+    --color-text-tertiary: #6b7280;
+    /* Gray 500 */
 
-    --color-border: #1e293b;
-    /* Slate 800 */
-    --color-border-light: #0f172a;
-    --color-border-neutral: #334155;
+    --color-border: #1f2937;
+    /* Gray 800 */
+    --color-border-light: #111827;
+    --color-border-neutral: #374151;
 
     /* Adjusted Accent for Dark Mode */
     --color-accent: #3b82f6;
     /* Blue 500 */
     --color-accent-hover: #60a5fa;
     /* Blue 400 */
-    --color-accent-subtle: rgba(59, 130, 246, 0.1);
+    --color-accent-subtle: rgba(59, 130, 246, 0.12);
 
     /* Glassmorphism Dark */
-    --glass-bg: rgba(2, 6, 23, 0.7);
-    --glass-border: rgba(30, 41, 59, 0.5);
+    --glass-bg: rgba(17, 24, 39, 0.8);
+    --glass-border: rgba(31, 41, 55, 0.5);
 
-    /* Shadows Dark - lighter/less harsh or colored */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    /* Shadows Dark */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 
     /* Glow Effects */
-    --glow-accent: 0 0 25px rgba(59, 130, 246, 0.2);
+    --glow-accent: 0 0 25px rgba(59, 130, 246, 0.25);
   }
 }
 
@@ -122,6 +126,7 @@
   --color-bg-primary: var(--color-bg-primary);
   --color-bg-secondary: var(--color-bg-secondary);
   --color-bg-tertiary: var(--color-bg-tertiary);
+  --color-card: var(--color-card);
 
   --color-text-primary: var(--color-text-primary);
   --color-text-secondary: var(--color-text-secondary);
@@ -150,7 +155,7 @@
   --shadow-xl: var(--shadow-xl);
 }
 
-/* ... keep reset and base styles ... */
+/* Base reset and styles */
 * {
   box-sizing: border-box;
 }
@@ -159,6 +164,23 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  color-scheme: light dark;
+}
+
+/* Smooth theme transitions */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+/* Disable transitions on page load to prevent flash */
+html.no-transitions *,
+html.no-transitions *::before,
+html.no-transitions *::after {
+  transition: none !important;
 }
 
 body {
@@ -168,8 +190,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  /* Smooth theme transition */
 }
 
 /* Typography Classes */
@@ -501,11 +521,15 @@ textarea.form-input {
 select.form-input {
   cursor: pointer;
   appearance: none;
-  /* Need to handle the arrow icon color for dark mode - using a mask or generic color might be better */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 40px;
+}
+
+/* Dark mode specific chevron color for select */
+[data-theme='dark'] select.form-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
 }
 
 .form-checkbox {

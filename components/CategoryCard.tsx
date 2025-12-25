@@ -15,19 +15,19 @@ export default function CategoryCard({
             className="block group"
         >
             <motion.div
-                whileHover={{ y: -4 }}
-                className="h-full p-6 bg-card border border-border rounded-xl shadow-sm hover:shadow-md hover:border-accent/50 transition-all duration-300 flex flex-col items-center text-center gap-4 bg-bg-primary"
+                whileHover={{ y: -2, transition: { duration: 0.2 } }}
+                className="h-full p-5 bg-card border border-border rounded-xl hover:shadow-md hover:border-accent/30 transition-all duration-300 flex flex-col items-center text-center gap-3"
             >
-                <div className="p-3 rounded-full bg-bg-secondary text-text-secondary group-hover:bg-accent/10 group-hover:text-accent transition-colors duration-300">
+                <div className="p-3 rounded-xl bg-bg-secondary text-text-secondary group-hover:bg-accent/10 group-hover:text-accent transition-colors duration-300">
                     {getCategoryIcon(category.name)}
                 </div>
 
                 <div>
-                    <h3 className="text-lg font-medium text-text-primary group-hover:text-accent transition-colors mb-1">
+                    <h3 className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">
                         {category.name}
                     </h3>
                     {category.count !== undefined && (
-                        <p className="text-sm text-text-tertiary">
+                        <p className="text-xs text-text-tertiary mt-1">
                             {category.count} APIs
                         </p>
                     )}

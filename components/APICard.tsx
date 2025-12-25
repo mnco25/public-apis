@@ -30,13 +30,14 @@ export default function APICard({
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       whileHover={{ y: -2 }}
+      transition={{ duration: 0.3 }}
       className={cn(
         "group relative flex flex-col justify-between bg-card border border-border rounded-xl transition-all duration-300 overflow-hidden",
-        "hover:shadow-lg hover:border-accent/30 bg-bg-primary",
+        "hover:shadow-lg hover:border-accent/30",
         variant === "compact" ? "p-5" : "p-6"
       )}
     >
@@ -46,22 +47,15 @@ export default function APICard({
         aria-label={`View details for ${api.name}`}
       >
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 mb-3">
+        <div className="flex items-start justify-between gap-3 mb-3">
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg font-semibold text-text-primary truncate group-hover:text-accent transition-colors duration-200">
+            <h3 className="text-base font-semibold text-text-primary truncate group-hover:text-accent transition-colors duration-200">
               {api.name}
             </h3>
-            <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-              <span className="text-xs font-medium text-text-tertiary">
-                {api.category}
-              </span>
-              <span className="text-text-tertiary/30">•</span>
-              <span
-                className={cn(
-                  "text-xs font-medium",
-                  getPricingColor(api.pricing)
-                )}
-              >
+            <div className="flex items-center gap-2 mt-1 text-xs text-text-tertiary">
+              <span>{api.category}</span>
+              <span className="opacity-50">•</span>
+              <span className={getPricingColor(api.pricing)}>
                 {getPricingLabel(api.pricing)}
               </span>
             </div>
@@ -76,7 +70,7 @@ export default function APICard({
 
         {/* Detailed Stats */}
         {variant === "detailed" && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-3 gap-x-2 mb-5 py-3 border-y border-border-light">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 py-3 border-y border-border">
             <StatItem label="Response" value={formatResponseTime(api.responseTime)} />
             <StatItem label="Auth" value={getAuthTypeLabel(api.authType)} />
             <StatItem label="CORS" value={api.cors ? "Yes" : "No"} />
@@ -90,17 +84,13 @@ export default function APICard({
             {api.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-0.5 bg-bg-secondary text-text-secondary text-[11px] font-medium rounded-md border border-transparent hover:border-border-neutral transition-colors"
-                onClick={(e) => {
-                  e.preventDefault(); // Don't trigger card click
-                  // could allow navigation to tag search here
-                }}
+                className="px-2 py-0.5 bg-bg-secondary text-text-secondary text-[11px] font-medium rounded-md"
               >
                 {tag}
               </span>
             ))}
             {api.tags.length > 3 && (
-              <span className="text-[10px] text-text-tertiary font-medium self-center px-1">
+              <span className="text-[11px] text-text-tertiary font-medium self-center">
                 +{api.tags.length - 3}
               </span>
             )}
@@ -108,14 +98,15 @@ export default function APICard({
         )}
       </Link>
 
-      {/* Actions Footer - Only for detailed view to keep compact view clean */}
+      {/* Actions Footer */}
       {variant === "detailed" && (
-        <div className="mt-5 pt-4 border-t border-border flex items-center justify-between">
+        <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
           <a
             href={api.documentation}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-xs font-medium text-text-secondary hover:text-accent transition-colors"
+            onClick={(e) => e.stopPropagation()}
           >
             Docs <ExternalLink className="w-3 h-3" />
           </a>
@@ -136,7 +127,7 @@ function StatItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <div className="text-[10px] text-text-tertiary mb-0.5 uppercase tracking-wide">{label}</div>
-      <div className="text-xs font-medium text-text-primary truncate" title={value}>{value}</div>
+      <div className="text-xs font-medium text-text-primary truncate">{value}</div>
     </div>
   );
 }
@@ -155,7 +146,7 @@ function APICardSkeleton({ variant }: { variant: "compact" | "detailed" }) {
       <div className="skeleton h-4 w-2/3 mb-4 rounded" />
 
       {variant === "detailed" && (
-        <div className="grid grid-cols-4 gap-2 py-3 my-3">
+        <div className="grid grid-cols-4 gap-2 py-3 my-3 border-y border-border">
           <div className="skeleton h-8 w-full rounded" />
           <div className="skeleton h-8 w-full rounded" />
           <div className="skeleton h-8 w-full rounded" />

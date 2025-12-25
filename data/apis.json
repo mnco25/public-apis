@@ -404,6 +404,275 @@
       },
       "responseTime": 190,
       "uptime": 99.75
+    },
+    {
+      "id": "spacex",
+      "name": "SpaceX",
+      "description": "Company, vehicle, launch, lander, and starlink data",
+      "category": "Education",
+      "baseUrl": "https://api.spacexdata.com/v4",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "50 requests/sec",
+      "pricing": "free",
+      "documentation": "https://github.com/r-spacex/SpaceX-API",
+      "tags": [
+        "space",
+        "rockets",
+        "launches",
+        "technology"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 120,
+      "uptime": 99.95
+    },
+    {
+      "id": "rick-and-morty",
+      "name": "The Rick and Morty API",
+      "description": "Characters, images, locations and episodes of the TV show",
+      "category": "Entertainment",
+      "baseUrl": "https://rickandmortyapi.com/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "10,000 requests/day",
+      "pricing": "free",
+      "documentation": "https://rickandmortyapi.com/documentation",
+      "tags": [
+        "tv",
+        "characters",
+        "episodes",
+        "images"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 80,
+      "uptime": 99.99
+    },
+    {
+      "id": "randomuser",
+      "name": "Random User Generator",
+      "description": "Generate random user data for testing",
+      "category": "Development Tools",
+      "baseUrl": "https://randomuser.me/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://randomuser.me/documentation",
+      "tags": [
+        "mock",
+        "user",
+        "data",
+        "testing"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 60,
+      "uptime": 99.90
+    },
+    {
+      "id": "unsplash",
+      "name": "Unsplash",
+      "description": "Beautiful, free images and photos",
+      "category": "Development Tools",
+      "baseUrl": "https://api.unsplash.com",
+      "authType": "api_key",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "50 requests/hour",
+      "pricing": "freemium",
+      "documentation": "https://unsplash.com/documentation",
+      "tags": [
+        "images",
+        "photos",
+        "photography"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 200,
+      "uptime": 99.95
+    },
+    {
+      "id": "open-library",
+      "name": "Open Library",
+      "description": "Information about books, authors and more",
+      "category": "Education",
+      "baseUrl": "https://openlibrary.org/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://openlibrary.org/developers/api",
+      "tags": [
+        "books",
+        "library",
+        "authors",
+        "literature"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 300,
+      "uptime": 99.80
+    },
+    {
+      "id": "joke-api",
+      "name": "Official Joke API",
+      "description": "Pattern matching, random jokes, and more",
+      "category": "Entertainment",
+      "baseUrl": "https://official-joke-api.appspot.com",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "100 requests/15min",
+      "pricing": "free",
+      "documentation": "https://github.com/15Dkatz/official_joke_api",
+      "tags": [
+        "jokes",
+        "humor",
+        "random",
+        "entertainment"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 150,
+      "uptime": 99.50
+    },
+    {
+      "id": "ipify",
+      "name": "ipify",
+      "description": "A simple public IP address API",
+      "category": "Development Tools",
+      "baseUrl": "https://api.ipify.org",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://www.ipify.org/",
+      "tags": [
+        "ip",
+        "geolocation",
+        "network",
+        "utilities"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 40,
+      "uptime": 99.99
+    },
+    {
+      "id": "openfoodfacts",
+      "name": "Open Food Facts",
+      "description": "Food products database",
+      "category": "Health & Medical",
+      "baseUrl": "https://world.openfoodfacts.org/api/v0",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "100 requests/minute",
+      "pricing": "free",
+      "documentation": "https://openfoodfacts.github.io/api-documentation/",
+      "tags": [
+        "food",
+        "nutrition",
+        "products",
+        "database"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 250,
+      "uptime": 99.00
+    },
+    {
+      "id": "marvel",
+      "name": "Marvel",
+      "description": "Access information about Marvel's vast library of comics",
+      "category": "Entertainment",
+      "baseUrl": "https://gateway.marvel.com/v1/public",
+      "authType": "api_key",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "3,000 requests/day",
+      "pricing": "free",
+      "documentation": "https://developer.marvel.com/docs",
+      "tags": [
+        "comics",
+        "heroes",
+        "marvel",
+        "movies"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 180,
+      "uptime": 99.90
+    },
+    {
+      "id": "omdb",
+      "name": "OMDb API",
+      "description": "The Open Movie Database",
+      "category": "Entertainment",
+      "baseUrl": "https://www.omdbapi.com/",
+      "authType": "api_key",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "1,000 requests/day",
+      "pricing": "freemium",
+      "documentation": "https://www.omdbapi.com/",
+      "tags": [
+        "movies",
+        "film",
+        "database",
+        "ratings"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 100,
+      "uptime": 99.80
     }
   ]
 }

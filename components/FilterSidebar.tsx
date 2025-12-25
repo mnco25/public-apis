@@ -342,7 +342,7 @@ function FilterCheckbox({
     )}>
       <div className={cn(
         "w-4 h-4 rounded border flex items-center justify-center transition-colors",
-        checked ? "bg-accent border-accent" : "border-border-neutral bg-white group-hover:border-accent"
+        checked ? "bg-accent border-accent" : "border-border-neutral bg-card group-hover:border-accent"
       )}>
         {checked && <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="text-white"><svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L3.5 6.5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></motion.div>}
       </div>

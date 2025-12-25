@@ -30,9 +30,9 @@ export default function Footer() {
               className="flex items-center gap-2 text-text-primary"
             >
               <LogoIcon />
-              <span className="text-h3 font-medium">Public APIs</span>
+              <span className="text-lg font-semibold">Public APIs</span>
             </Link>
-            <p className="mt-3 text-body-sm text-text-secondary max-w-xs">
+            <p className="mt-3 text-sm text-text-secondary max-w-xs leading-relaxed">
               A curated registry of public APIs for developers. Find, validate,
               and integrate APIs with confidence.
             </p>
@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Links */}
           <div className="grid grid-cols-3 gap-8 md:col-span-3">
             <div>
-              <h3 className="text-body-sm font-medium text-text-primary mb-4">
+              <h3 className="text-sm font-semibold text-text-primary mb-4">
                 Product
               </h3>
               <ul className="space-y-3">
@@ -49,7 +49,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-body-sm text-text-secondary hover:text-text-primary transition-colors"
+                      className="text-sm text-text-secondary hover:text-text-primary transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -59,7 +59,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-body-sm font-medium text-text-primary mb-4">
+              <h3 className="text-sm font-semibold text-text-primary mb-4">
                 Resources
               </h3>
               <ul className="space-y-3">
@@ -67,7 +67,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-body-sm text-text-secondary hover:text-text-primary transition-colors"
+                      className="text-sm text-text-secondary hover:text-text-primary transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-body-sm font-medium text-text-primary mb-4">
+              <h3 className="text-sm font-semibold text-text-primary mb-4">
                 Legal
               </h3>
               <ul className="space-y-3">
@@ -85,7 +85,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-body-sm text-text-secondary hover:text-text-primary transition-colors"
+                      className="text-sm text-text-secondary hover:text-text-primary transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -98,8 +98,8 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-caption text-text-tertiary">
-            {new Date().getFullYear()} Public APIs. Open source under MIT.
+          <p className="text-xs text-text-tertiary">
+            © {new Date().getFullYear()} Public APIs. Open source under MIT.
           </p>
           <div className="flex items-center gap-4">
             <a
@@ -135,6 +135,7 @@ function LogoIcon() {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="text-accent"
     >
       <rect
         x="2"
@@ -158,8 +159,8 @@ function LogoIcon() {
 function GitHubIcon() {
   return (
     <svg
-      width="20"
-      height="20"
+      width="18"
+      height="18"
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -177,8 +178,8 @@ function GitHubIcon() {
 function TwitterIcon() {
   return (
     <svg
-      width="20"
-      height="20"
+      width="18"
+      height="18"
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -3,6 +3,8 @@ import { getCategories, getRecentlyValidatedAPIs, getStats } from "@/lib/db";
 import APICard from "@/components/APICard";
 import HeroSection from "@/components/HeroSection";
 import CategoryCard from "@/components/CategoryCard";
+import HomeStats from "@/components/HomeStats";
+import { ArrowRight, Zap } from "lucide-react";
 
 export default async function HomePage() {
   const categories = await getCategories();
@@ -13,34 +15,23 @@ export default async function HomePage() {
     <div className="animate-fade-in">
       <HeroSection />
 
-      {/* Stats Section */}
-      <section className="py-8 border-y border-border bg-bg-secondary">
-        <div className="container-padding">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-            <StatItem label="Total APIs" value={stats.totalApis.toString()} />
-            <StatItem
-              label="Categories"
-              value={stats.totalCategories.toString()}
-            />
-            <StatItem
-              label="Avg Response"
-              value={`${stats.avgResponseTime}ms`}
-            />
-            <StatItem label="Uptime" value={`${stats.avgUptime}%`} />
-          </div>
-        </div>
-      </section>
+      {/* Stats Section - Premium & Animated */}
+      <HomeStats stats={stats} />
 
       {/* Categories Grid */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-20 bg-bg-secondary">
         <div className="container-padding">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-h2">Browse by Category</h2>
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-text-primary">Browse by Category</h2>
+              <p className="text-text-secondary mt-1 text-sm">Explore APIs organized by use case</p>
+            </div>
             <Link
               href="/search"
-              className="text-body-sm text-accent hover:underline"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
             >
               View all
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 stagger-children">
@@ -52,15 +43,19 @@ export default async function HomePage() {
       </section>
 
       {/* Recently Validated */}
-      <section className="py-16 md:py-24 bg-bg-secondary">
+      <section className="py-16 md:py-20">
         <div className="container-padding">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-h2">Recently Validated</h2>
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-text-primary">Recently Validated</h2>
+              <p className="text-text-secondary mt-1 text-sm">Fresh APIs verified by the community</p>
+            </div>
             <Link
               href="/search?sort=newest"
-              className="text-body-sm text-accent hover:underline"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
             >
               View all
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
@@ -71,35 +66,39 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24">
+      {/* CTA Section - Premium Design */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-bg-secondary to-bg-primary">
         <div className="container-padding">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-h2 mb-4">Know an API we're missing?</h2>
-            <p className="text-body text-text-secondary mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6 border border-accent/20">
+              <Zap className="w-4 h-4" />
+              Open Source Project
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4 tracking-tight">
+              Know an API we're missing?
+            </h2>
+            <p className="text-lg text-text-secondary mb-8 max-w-xl mx-auto leading-relaxed">
               Help us grow the registry. Contribute APIs, validate endpoints,
-              and keep the data fresh.
+              and keep the data fresh for everyone.
             </p>
-            <Link
-              href="/contribute"
-              className="inline-flex items-center justify-center h-12 px-8 bg-accent text-white font-medium rounded-lg hover:bg-accent-hover transition-colors"
-            >
-              Contribute an API
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/contribute"
+                className="group inline-flex items-center justify-center gap-2 h-12 px-8 bg-accent text-white font-medium rounded-xl hover:bg-accent-hover shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300"
+              >
+                Contribute an API
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+              <Link
+                href="/search"
+                className="inline-flex items-center justify-center gap-2 h-12 px-8 bg-card text-text-primary font-medium rounded-xl border border-border hover:border-accent/30 hover:bg-bg-secondary transition-all duration-300"
+              >
+                Browse APIs
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-    </div>
-  );
-}
-
-function StatItem({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="text-center">
-      <div className="text-display-md text-text-primary font-medium">
-        {value}
-      </div>
-      <div className="text-body-sm text-text-secondary">{label}</div>
     </div>
   );
 }

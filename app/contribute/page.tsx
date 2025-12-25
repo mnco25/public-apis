@@ -110,9 +110,9 @@ function TabButton({
       {active && (
         <motion.div
           layoutId="contribute-tab"
-          className="absolute inset-0 bg-white shadow-sm rounded-full border border-black/5"
+          className="absolute inset-0 bg-card shadow-sm rounded-full border border-border"
           initial={false}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
         />
       )}
       <span className="relative z-10">{children}</span>

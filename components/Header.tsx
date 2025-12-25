@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navigation = [
@@ -16,7 +16,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-white/5 bg-white/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-bg-primary/80 backdrop-blur-xl">
       <div className="container-padding">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -25,13 +25,13 @@ export default function Header() {
             className="group flex items-center gap-2 text-text-primary transition-colors"
           >
             <LogoIcon />
-            <span className="text-h3 font-medium tracking-tight hidden sm:inline group-hover:text-accent transition-colors duration-300">
+            <span className="text-lg font-semibold tracking-tight hidden sm:inline group-hover:text-accent transition-colors duration-300">
               Public APIs
             </span>
           </Link>
 
           {/* Navigation */}
-          <nav className="flex items-center gap-1 bg-black/5 p-1 rounded-full backdrop-blur-sm border border-white/10 shadow-inner">
+          <nav className="flex items-center gap-1 bg-bg-secondary p-1 rounded-full border border-border">
             {navigation.map((item) => {
               const isActive =
                 item.href === "/"
@@ -43,7 +43,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "relative px-4 py-1.5 text-sm font-medium rounded-full transition-colors duration-300 outline-none focus-visible:ring-2 ring-accent/50",
+                    "relative px-4 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 outline-none focus-visible:ring-2 ring-accent/50",
                     isActive
                       ? "text-text-primary"
                       : "text-text-secondary hover:text-text-primary"
@@ -52,9 +52,9 @@ export default function Header() {
                   {isActive && (
                     <motion.div
                       layoutId="header-nav-pill"
-                      className="absolute inset-0 bg-white shadow-sm rounded-full"
+                      className="absolute inset-0 bg-bg-primary shadow-sm rounded-full border border-border"
                       initial={false}
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
                   <span className="relative z-10">{item.name}</span>
@@ -64,15 +64,15 @@ export default function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <ThemeToggle />
 
             {/* GitHub Link */}
             <a
-              href="https://github.com/dave-gray/public-apis"
+              href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-text-secondary hover:text-text-primary transition-colors hover:bg-black/5 rounded-full"
+              className="p-2 text-text-secondary hover:text-text-primary transition-colors hover:bg-bg-secondary rounded-full"
               aria-label="View on GitHub"
             >
               <GitHubIcon />
@@ -87,12 +87,12 @@ export default function Header() {
 function LogoIcon() {
   return (
     <svg
-      width="32"
-      height="32"
+      width="28"
+      height="28"
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="text-text-primary"
+      className="text-accent"
     >
       <rect
         x="2"
@@ -102,14 +102,12 @@ function LogoIcon() {
         rx="8"
         stroke="currentColor"
         strokeWidth="2.5"
-        className="group-hover:stroke-accent transition-colors duration-300"
       />
       <path
         d="M9 12H23M9 16H23M9 20H17"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
-        className="group-hover:stroke-accent/70 transition-colors duration-300 delay-75"
       />
     </svg>
   );

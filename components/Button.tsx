@@ -37,9 +37,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles: Record<ButtonVariant, string> = {
       primary:
-        "bg-gradient-to-b from-accent to-accent-hover text-white shadow-md hover:shadow-lg hover:brightness-110 active:scale-[0.98] border border-accent-hover/20",
+        "bg-accent text-white shadow-sm hover:bg-accent-hover active:scale-[0.98]",
       secondary:
-        "bg-white text-text-primary border border-border hover:bg-bg-secondary hover:border-border-neutral shadow-sm hover:shadow active:scale-[0.98]",
+        "bg-card text-text-primary border border-border hover:bg-bg-secondary hover:border-border-neutral shadow-sm active:scale-[0.98]",
       ghost:
         "bg-transparent text-text-secondary hover:text-text-primary hover:bg-bg-secondary active:scale-[0.98]",
       danger:

@@ -117,9 +117,9 @@ export default function SearchBar({
           placeholder={placeholder}
           autoFocus={autoFocus}
           className={cn(
-            "w-full rounded-xl border border-border bg-white/50 backdrop-blur-sm text-text-primary placeholder:text-text-tertiary shadow-sm",
-            "focus:outline-none focus:ring-4 focus:ring-accent/10 focus:border-accent",
-            "transition-all duration-300 ease-out",
+            "w-full rounded-xl border border-border bg-card text-text-primary placeholder:text-text-tertiary shadow-sm",
+            "focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent",
+            "transition-all duration-200",
             sizeStyles[size],
             size === "sm" ? "pl-9 pr-8" : size === "lg" ? "pl-14 pr-12" : "pl-11 pr-10"
           )}

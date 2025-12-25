@@ -57,7 +57,6 @@ export default function RootLayout({
           attribute="data-theme"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
           <ToastProvider>
             <Header />
