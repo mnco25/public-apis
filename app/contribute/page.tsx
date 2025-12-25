@@ -152,7 +152,17 @@ function AddAPIForm() {
 
   return (
     <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-8 shadow-sm space-y-6">
-      <h2 className="text-h3">Add New API</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-h3">Add New API</h2>
+        <a
+          href="https://github.com/your-username/public-apis/issues/new?template=add-api.yml"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-accent hover:text-accent-hover transition-colors flex items-center gap-1"
+        >
+          Or submit via GitHub →
+        </a>
+      </div>
 
       <FormField label="API Name" required>
         <input

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import CommandPalette from "@/components/CommandPalette";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -64,7 +65,8 @@ export default function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <CommandPalette />
             <ThemeToggle />
 
             {/* GitHub Link */}

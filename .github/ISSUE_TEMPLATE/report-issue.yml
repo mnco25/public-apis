@@ -1,0 +1,58 @@
+name: Report API Issue
+description: Report a broken, incorrect, or outdated API in the registry
+title: "[Issue] "
+labels: ["bug", "api-issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us keep the registry accurate! Report any issues with existing APIs.
+        
+  - type: input
+    id: api-name
+    attributes:
+      label: API Name
+      description: The name of the API with the issue
+      placeholder: e.g., OpenWeatherMap
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of issue is this?
+      options:
+        - API is down / unreachable
+        - API URL has changed
+        - Documentation link is broken
+        - Incorrect information
+        - API has been deprecated
+        - Authentication type changed
+        - Other
+    validations:
+      required: true
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please describe the issue in detail
+      placeholder: What's wrong with this API entry?
+    validations:
+      required: true
+      
+  - type: input
+    id: correct-info
+    attributes:
+      label: Correct Information (if applicable)
+      description: If you know the correct information, please provide it
+      placeholder: e.g., The new base URL is https://api.v2.example.com
+      
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I have verified this issue exists as of today
+          required: true

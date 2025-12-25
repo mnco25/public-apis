@@ -673,6 +673,600 @@
       },
       "responseTime": 100,
       "uptime": 99.80
+    },
+    {
+      "id": "catfacts",
+      "name": "Cat Facts",
+      "description": "Daily cat facts and random cat information",
+      "category": "Entertainment",
+      "baseUrl": "https://catfact.ninja",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://catfact.ninja/",
+      "tags": [
+        "cats",
+        "animals",
+        "facts",
+        "fun"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 85,
+      "uptime": 99.90
+    },
+    {
+      "id": "exchangerate",
+      "name": "ExchangeRate-API",
+      "description": "Free currency exchange rates and conversion",
+      "category": "Finance & Markets",
+      "baseUrl": "https://open.er-api.com/v6",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "1,500 requests/month",
+      "pricing": "freemium",
+      "documentation": "https://www.exchangerate-api.com/docs/",
+      "tags": [
+        "currency",
+        "forex",
+        "exchange",
+        "money"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 120,
+      "uptime": 99.95
+    },
+    {
+      "id": "quotable",
+      "name": "Quotable",
+      "description": "Free API for famous quotes",
+      "category": "Entertainment",
+      "baseUrl": "https://api.quotable.io",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://github.com/lukePeavey/quotable",
+      "tags": [
+        "quotes",
+        "inspiration",
+        "authors",
+        "random"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 95,
+      "uptime": 99.85
+    },
+    {
+      "id": "deck-of-cards",
+      "name": "Deck of Cards",
+      "description": "API to simulate a deck of cards",
+      "category": "Entertainment",
+      "baseUrl": "https://deckofcardsapi.com/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://deckofcardsapi.com/",
+      "tags": [
+        "cards",
+        "games",
+        "random",
+        "deck"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 70,
+      "uptime": 99.95
+    },
+    {
+      "id": "boredapi",
+      "name": "Bored API",
+      "description": "Find random activities to fight boredom",
+      "category": "Entertainment",
+      "baseUrl": "https://www.boredapi.com/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://www.boredapi.com/documentation",
+      "tags": [
+        "activities",
+        "boredom",
+        "random",
+        "fun"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 60,
+      "uptime": 99.80
+    },
+    {
+      "id": "agify",
+      "name": "Agify.io",
+      "description": "Predict the age of a name",
+      "category": "Development Tools",
+      "baseUrl": "https://api.agify.io",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "1,000 requests/day",
+      "pricing": "freemium",
+      "documentation": "https://agify.io/",
+      "tags": [
+        "names",
+        "age",
+        "demographics",
+        "prediction"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 50,
+      "uptime": 99.99
+    },
+    {
+      "id": "genderize",
+      "name": "Genderize.io",
+      "description": "Predict the gender of a name",
+      "category": "Development Tools",
+      "baseUrl": "https://api.genderize.io",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "1,000 requests/day",
+      "pricing": "freemium",
+      "documentation": "https://genderize.io/",
+      "tags": [
+        "names",
+        "gender",
+        "demographics",
+        "prediction"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 45,
+      "uptime": 99.99
+    },
+    {
+      "id": "nationalize",
+      "name": "Nationalize.io",
+      "description": "Predict the nationality of a name",
+      "category": "Development Tools",
+      "baseUrl": "https://api.nationalize.io",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "1,000 requests/day",
+      "pricing": "freemium",
+      "documentation": "https://nationalize.io/",
+      "tags": [
+        "names",
+        "nationality",
+        "demographics",
+        "prediction"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 48,
+      "uptime": 99.99
+    },
+    {
+      "id": "httpbin",
+      "name": "httpbin",
+      "description": "HTTP request and response testing service",
+      "category": "Development Tools",
+      "baseUrl": "https://httpbin.org",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://httpbin.org/",
+      "tags": [
+        "testing",
+        "http",
+        "debugging",
+        "development"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 100,
+      "uptime": 99.90
+    },
+    {
+      "id": "reqres",
+      "name": "ReqRes",
+      "description": "Hosted REST API for testing and prototyping",
+      "category": "Development Tools",
+      "baseUrl": "https://reqres.in/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://reqres.in/",
+      "tags": [
+        "testing",
+        "mock",
+        "users",
+        "development"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 55,
+      "uptime": 99.95
+    },
+    {
+      "id": "dummyjson",
+      "name": "DummyJSON",
+      "description": "Fake REST API with various placeholder data",
+      "category": "Development Tools",
+      "baseUrl": "https://dummyjson.com",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://dummyjson.com/docs",
+      "tags": [
+        "mock",
+        "dummy",
+        "testing",
+        "placeholder"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 65,
+      "uptime": 99.90
+    },
+    {
+      "id": "swapi",
+      "name": "SWAPI",
+      "description": "The Star Wars API - All the Star Wars data",
+      "category": "Entertainment",
+      "baseUrl": "https://swapi.dev/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "10,000 requests/day",
+      "pricing": "free",
+      "documentation": "https://swapi.dev/documentation",
+      "tags": [
+        "star-wars",
+        "movies",
+        "characters",
+        "films"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 80,
+      "uptime": 99.85
+    },
+    {
+      "id": "publicholidays",
+      "name": "Nager.Date",
+      "description": "Public holidays for over 100 countries",
+      "category": "Maps & Location",
+      "baseUrl": "https://date.nager.at/api/v3",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://date.nager.at/Api",
+      "tags": [
+        "holidays",
+        "calendar",
+        "countries",
+        "dates"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 90,
+      "uptime": 99.90
+    },
+    {
+      "id": "worldtime",
+      "name": "WorldTimeAPI",
+      "description": "Simple JSON API for current time in any timezone",
+      "category": "Development Tools",
+      "baseUrl": "https://worldtimeapi.org/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "http://worldtimeapi.org/",
+      "tags": [
+        "time",
+        "timezone",
+        "clock",
+        "datetime"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 70,
+      "uptime": 99.80
+    },
+    {
+      "id": "openmeteo",
+      "name": "Open-Meteo",
+      "description": "Free weather API with hourly forecasts",
+      "category": "Weather",
+      "baseUrl": "https://api.open-meteo.com/v1",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "10,000 requests/day",
+      "pricing": "free",
+      "documentation": "https://open-meteo.com/en/docs",
+      "tags": [
+        "weather",
+        "forecast",
+        "climate",
+        "hourly"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 110,
+      "uptime": 99.95
+    },
+    {
+      "id": "sunrise-sunset",
+      "name": "Sunrise Sunset",
+      "description": "Sunset and sunrise times for any location",
+      "category": "Weather",
+      "baseUrl": "https://api.sunrise-sunset.org",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://sunrise-sunset.org/api",
+      "tags": [
+        "sun",
+        "sunrise",
+        "sunset",
+        "astronomy"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 75,
+      "uptime": 99.85
+    },
+    {
+      "id": "geocode",
+      "name": "Geocode.xyz",
+      "description": "Geocoding and reverse geocoding API",
+      "category": "Maps & Location",
+      "baseUrl": "https://geocode.xyz",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "1 request/second",
+      "pricing": "freemium",
+      "documentation": "https://geocode.xyz/api",
+      "tags": [
+        "geocoding",
+        "coordinates",
+        "address",
+        "location"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 200,
+      "uptime": 99.70
+    },
+    {
+      "id": "zippopotamus",
+      "name": "Zippopotam.us",
+      "description": "Postal code and location data",
+      "category": "Maps & Location",
+      "baseUrl": "https://api.zippopotam.us",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "http://www.zippopotam.us/",
+      "tags": [
+        "zipcode",
+        "postal",
+        "address",
+        "location"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 60,
+      "uptime": 99.90
+    },
+    {
+      "id": "dictionaryapi",
+      "name": "Free Dictionary API",
+      "description": "Definitions, phonetics, and examples for English words",
+      "category": "Education",
+      "baseUrl": "https://api.dictionaryapi.dev/api/v2",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://dictionaryapi.dev/",
+      "tags": [
+        "dictionary",
+        "words",
+        "definitions",
+        "english"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 85,
+      "uptime": 99.90
+    },
+    {
+      "id": "trivia",
+      "name": "Open Trivia Database",
+      "description": "Free trivia questions in various categories",
+      "category": "Entertainment",
+      "baseUrl": "https://opentdb.com/api.php",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://opentdb.com/api_config.php",
+      "tags": [
+        "trivia",
+        "quiz",
+        "questions",
+        "games"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 90,
+      "uptime": 99.85
+    },
+    {
+      "id": "cocktaildb",
+      "name": "TheCocktailDB",
+      "description": "Cocktail recipes and ingredients database",
+      "category": "Entertainment",
+      "baseUrl": "https://www.thecocktaildb.com/api/json/v1/1",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "freemium",
+      "documentation": "https://www.thecocktaildb.com/api.php",
+      "tags": [
+        "cocktails",
+        "drinks",
+        "recipes",
+        "bartender"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 95,
+      "uptime": 99.80
+    },
+    {
+      "id": "mealdb",
+      "name": "TheMealDB",
+      "description": "Meal recipes and ingredients database",
+      "category": "Entertainment",
+      "baseUrl": "https://www.themealdb.com/api/json/v1/1",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "freemium",
+      "documentation": "https://www.themealdb.com/api.php",
+      "tags": [
+        "meals",
+        "recipes",
+        "food",
+        "cooking"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 100,
+      "uptime": 99.80
     }
   ]
 }

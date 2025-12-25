@@ -1,0 +1,83 @@
+name: Validate API Links
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual triggers
+
+jobs:
+  validate-apis:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run API validation script
+        id: validate
+        run: |
+          node scripts/validate-apis.js > validation-results.json
+          echo "results=$(cat validation-results.json)" >> $GITHUB_OUTPUT
+
+      - name: Check for failed APIs
+        run: |
+          FAILED=$(cat validation-results.json | jq '.failed | length')
+          echo "Found $FAILED failed APIs"
+          if [ "$FAILED" -gt "0" ]; then
+            echo "::warning::$FAILED APIs are currently unreachable"
+          fi
+
+      - name: Update API health status
+        if: github.event_name == 'schedule'
+        run: |
+          node scripts/update-health-status.js
+
+      - name: Commit changes
+        if: github.event_name == 'schedule'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/apis.json
+          git diff --staged --quiet || git commit -m "chore: update API health status [skip ci]"
+          git push || echo "No changes to push"
+
+      - name: Create issue for dead APIs
+        if: github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const results = JSON.parse(fs.readFileSync('validation-results.json', 'utf8'));
+            
+            if (results.failed && results.failed.length > 0) {
+              const body = `## 🔴 API Health Check Failed
+              
+              The following APIs failed the daily health check:
+              
+              ${results.failed.map(api => `- **${api.name}** (${api.id})
+                - URL: ${api.baseUrl}
+                - Error: ${api.error}
+                - Last Working: ${api.lastChecked || 'Unknown'}`).join('\n\n')}
+              
+              ---
+              
+              *This issue was automatically created by the API validation workflow.*
+              `;
+              
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `🔴 ${results.failed.length} APIs failed health check`,
+                body: body,
+                labels: ['health-check', 'automated']
+              });
+            }

@@ -7,6 +7,7 @@ import APICard from "@/components/APICard";
 import Button from "@/components/Button";
 import HealthBadge from "@/components/HealthBadge";
 import { getCategoryIcon } from "@/components/CategoryIcons";
+import APIPlayground from "@/components/APIPlayground";
 import {
     formatRelativeTime,
     formatResponseTime,
@@ -141,6 +142,13 @@ export default function APIDetailView({
                                 <div className="h-px bg-border w-full" />
                                 <DetailRow label="Last Updated" value={formatRelativeTime(api.lastChecked)} />
                             </div>
+
+                            {/* API Playground */}
+                            <APIPlayground
+                                baseUrl={api.baseUrl}
+                                apiName={api.name}
+                                authType={api.authType}
+                            />
                         </motion.section>
 
                         {/* Tags */}
