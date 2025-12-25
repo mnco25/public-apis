@@ -1,58 +1,114 @@
-
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "edge";
+// Use Node.js runtime for better fetch compatibility
+export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const url = searchParams.get("url");
 
     if (!url) {
-        return NextResponse.json({ error: "Missing 'url' parameter" }, { status: 400 });
+        return NextResponse.json(
+            { error: "Missing 'url' parameter" },
+            { status: 400 }
+        );
+    }
+
+    // Validate URL
+    try {
+        new URL(url);
+    } catch {
+        return NextResponse.json(
+            { error: "Invalid URL format" },
+            { status: 400 }
+        );
     }
 
     try {
-        // Validate string starts with http/https
-        if (!url.startsWith("http")) {
-            return NextResponse.json({ error: "Invalid URL. Must start with http:// or https://" }, { status: 400 });
-        }
+        const startTime = Date.now();
 
-        const startTime = performance.now();
+        // Create an AbortController for timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
 
-        // Fetch from the target API
         const response = await fetch(url, {
             method: "GET",
             headers: {
                 "User-Agent": "PublicAPIs-Playground/1.0",
                 "Accept": "application/json, text/plain, */*",
             },
+            signal: controller.signal,
+            // @ts-ignore - Next.js specific option
+            cache: "no-store",
         });
 
-        const endTime = performance.now();
-        const responseTime = Math.round(endTime - startTime);
+        clearTimeout(timeoutId);
+
+        const endTime = Date.now();
+        const responseTime = endTime - startTime;
 
         // Get the response body
-        let data;
-        const contentType = response.headers.get("content-type");
+        let data: unknown;
+        const contentType = response.headers.get("content-type") || "";
 
-        if (contentType && contentType.includes("application/json")) {
-            data = await response.json();
-        } else {
-            data = await response.text();
+        try {
+            if (contentType.includes("application/json")) {
+                data = await response.json();
+            } else {
+                const text = await response.text();
+                // Try to parse as JSON anyway
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    data = text;
+                }
+            }
+        } catch (parseError) {
+            data = { parseError: "Could not parse response body" };
         }
 
         return NextResponse.json({
             status: response.status,
             statusText: response.statusText,
-            headers: Object.fromEntries(response.headers.entries()),
             data: data,
-            responseTime: responseTime
+            responseTime: responseTime,
         });
-
     } catch (error) {
-        console.error("Proxy error:", error);
-        return NextResponse.json({
-            error: error instanceof Error ? error.message : "Failed to fetch from target API"
-        }, { status: 500 });
+        console.error("Proxy fetch error:", error);
+
+        // Handle specific error types
+        if (error instanceof Error) {
+            if (error.name === "AbortError") {
+                return NextResponse.json(
+                    { error: "Request timed out after 15 seconds" },
+                    { status: 504 }
+                );
+            }
+
+            // Check for common fetch errors
+            if (error.message.includes("ENOTFOUND")) {
+                return NextResponse.json(
+                    { error: "Could not resolve hostname. Check the URL." },
+                    { status: 502 }
+                );
+            }
+
+            if (error.message.includes("ECONNREFUSED")) {
+                return NextResponse.json(
+                    { error: "Connection refused. The server may be down." },
+                    { status: 502 }
+                );
+            }
+
+            return NextResponse.json(
+                { error: `Fetch failed: ${error.message}` },
+                { status: 500 }
+            );
+        }
+
+        return NextResponse.json(
+            { error: "An unknown error occurred" },
+            { status: 500 }
+        );
     }
 }

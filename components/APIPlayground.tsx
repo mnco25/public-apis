@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Copy, Check, Loader2, ChevronDown, ChevronUp, AlertCircle } from "lucide-react";
 import { cn, copyToClipboard } from "@/lib/utils";
+import JsonViewer from "@/components/JsonViewer";
 
 interface APIPlaygroundProps {
     baseUrl: string;
@@ -245,9 +246,7 @@ export default function APIPlayground({ baseUrl, apiName, authType }: APIPlaygro
                                                     {error}
                                                 </div>
                                             ) : (
-                                                <pre className="p-4 bg-[#1e1e2e] border border-border rounded-lg text-sm text-[#cdd6f4] overflow-x-auto max-h-[300px] overflow-y-auto">
-                                                    <code>{response}</code>
-                                                </pre>
+                                                <JsonViewer data={response || ""} maxHeight="350px" />
                                             )}
                                         </div>
                                     </motion.div>
