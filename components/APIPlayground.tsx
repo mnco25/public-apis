@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Copy, Check, Loader2, ChevronDown, ChevronUp, AlertCircle } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, copyToClipboard } from "@/lib/utils";
 
 interface APIPlaygroundProps {
     baseUrl: string;
@@ -31,14 +31,21 @@ export default function APIPlayground({ baseUrl, apiName, authType }: APIPlaygro
         setStatusCode(null);
         setResponseTime(null);
 
-        const fullUrl = endpoint ? `${baseUrl}${endpoint}` : baseUrl;
+        // Ensure baseUrl doesn't end with slash and endpoint doesn't start with slash to avoid double slashes
+        // Or handle it gracefully. 
+        // Best approach: normalize URL
+        const cleanBase = baseUrl.replace(/\/$/, "");
+        const cleanEndpoint = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
+        // If endpoint is empty, cleanEndpoint is "/" which is fine, or empty string.
+        // Actually if endpoint is empty, we just want cleanBase.
+
+        let fullUrl = endpoint
+            ? `${cleanBase}${endpoint.startsWith("/") ? endpoint : "/" + endpoint}`
+            : cleanBase;
 
         try {
-            const startTime = performance.now();
-
-            // Use a CORS proxy for demo purposes
-            // In production, you'd want to handle this server-side
-            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(fullUrl)}`;
+            // Use our own secure proxy
+            const proxyUrl = `/api/proxy?url=${encodeURIComponent(fullUrl)}`;
 
             const res = await fetch(proxyUrl, {
                 method: "GET",
@@ -47,35 +54,41 @@ export default function APIPlayground({ baseUrl, apiName, authType }: APIPlaygro
                 },
             });
 
-            const endTime = performance.now();
-            setResponseTime(Math.round(endTime - startTime));
-            setStatusCode(res.status);
-
             const data = await res.json();
 
-            // allorigins wraps the response
-            if (data.contents) {
-                try {
-                    const parsed = JSON.parse(data.contents);
-                    setResponse(JSON.stringify(parsed, null, 2));
-                } catch {
-                    setResponse(data.contents);
-                }
-            } else {
-                setResponse(JSON.stringify(data, null, 2));
+            if (!res.ok) {
+                throw new Error(data.error || `Proxy error: ${res.statusText}`);
             }
+
+            setStatusCode(data.status);
+            setResponseTime(data.responseTime);
+
+            if (data.status >= 400) {
+                setError(`API returned status ${data.status}: ${data.statusText}`);
+            }
+
+            // data.data is the actual API response
+            if (typeof data.data === 'object') {
+                setResponse(JSON.stringify(data.data, null, 2));
+            } else {
+                setResponse(String(data.data));
+            }
+
         } catch (err) {
-            setError(err instanceof Error ? err.message : "Failed to fetch. The API might not support CORS or the endpoint is invalid.");
+            console.error("Playground error:", err);
+            setError(err instanceof Error ? err.message : "Failed to fetch from API. Please check the endpoint or CORS settings.");
         } finally {
             setIsLoading(false);
         }
     }, [baseUrl, endpoint]);
 
-    const handleCopy = useCallback(() => {
+    const handleCopy = useCallback(async () => {
         if (response) {
-            navigator.clipboard.writeText(response);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
+            const success = await copyToClipboard(response);
+            if (success) {
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            }
         }
     }, [response]);
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CopyUrlButton, ValidateButton } from "@/components/APIDetailActions";
@@ -15,6 +16,7 @@ import {
     getAuthTypeLabel,
     getPricingLabel,
     getPricingColor,
+    copyToClipboard,
 } from "@/lib/utils";
 import type { APIEntry } from "@/lib/types";
 import { ArrowLeft, ExternalLink, ShieldCheck, Clock, Activity, Copy, Check } from "lucide-react";
@@ -239,20 +241,34 @@ function DetailRow({
     mono?: boolean;
     copyable?: boolean;
 }) {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = async () => {
+        const success = await copyToClipboard(value);
+        if (success) {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        }
+    };
+
     return (
         <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 gap-2 hover:bg-bg-secondary/40 transition-colors">
             <span className="text-sm font-medium text-text-secondary">{label}</span>
-            <div className="flex items-center gap-2 max-w-full">
-                <span className={`text-sm text-text-primary truncate ${mono ? "font-mono" : ""}`}>
+            <div className="flex items-center gap-2 max-w-full overflow-hidden">
+                <span className={`text-sm text-text-primary truncate max-w-[250px] sm:max-w-[350px] ${mono ? "font-mono text-xs" : ""}`}>
                     {value}
                 </span>
                 {copyable && (
                     <button
-                        className="p-1 text-text-tertiary hover:text-accent transition-colors rounded hover:bg-bg-tertiary"
-                        onClick={() => navigator.clipboard.writeText(value)}
-                        title="Copy to clipboard"
+                        className="flex-shrink-0 p-1.5 text-text-tertiary hover:text-accent transition-colors rounded hover:bg-bg-tertiary"
+                        onClick={handleCopy}
+                        title={copied ? "Copied!" : "Copy to clipboard"}
                     >
-                        <Copy className="w-3.5 h-3.5" />
+                        {copied ? (
+                            <Check className="w-3.5 h-3.5 text-success" />
+                        ) : (
+                            <Copy className="w-3.5 h-3.5" />
+                        )}
                     </button>
                 )}
             </div>

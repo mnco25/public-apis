@@ -1267,6 +1267,411 @@
       },
       "responseTime": 100,
       "uptime": 99.80
+    },
+    {
+      "id": "dogceo",
+      "name": "Dog CEO",
+      "description": "Random dog images and breed information",
+      "category": "Entertainment",
+      "baseUrl": "https://dog.ceo/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://dog.ceo/dog-api/",
+      "tags": [
+        "dogs",
+        "animals",
+        "images",
+        "breeds"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 65,
+      "uptime": 99.95
+    },
+    {
+      "id": "chucknorris",
+      "name": "Chuck Norris API",
+      "description": "Hand curated Chuck Norris facts",
+      "category": "Entertainment",
+      "baseUrl": "https://api.chucknorris.io",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://api.chucknorris.io/",
+      "tags": [
+        "jokes",
+        "facts",
+        "humor",
+        "random"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 70,
+      "uptime": 99.90
+    },
+    {
+      "id": "randomfox",
+      "name": "RandomFox",
+      "description": "Random fox images",
+      "category": "Entertainment",
+      "baseUrl": "https://randomfox.ca",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://randomfox.ca/",
+      "tags": [
+        "fox",
+        "animals",
+        "images",
+        "random"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 80,
+      "uptime": 99.85
+    },
+    {
+      "id": "adviceslip",
+      "name": "Advice Slip",
+      "description": "Random advice slips",
+      "category": "Entertainment",
+      "baseUrl": "https://api.adviceslip.com",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://api.adviceslip.com/",
+      "tags": [
+        "advice",
+        "quotes",
+        "random",
+        "inspiration"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 55,
+      "uptime": 99.90
+    },
+    {
+      "id": "coindesk",
+      "name": "CoinDesk",
+      "description": "Bitcoin Price Index (BPI) data",
+      "category": "Finance & Markets",
+      "baseUrl": "https://api.coindesk.com/v1",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://www.coindesk.com/coindesk-api",
+      "tags": [
+        "bitcoin",
+        "crypto",
+        "price",
+        "finance"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 90,
+      "uptime": 99.95
+    },
+    {
+      "id": "placekitten",
+      "name": "PlaceKitten",
+      "description": "Placeholder kitten images",
+      "category": "Development Tools",
+      "baseUrl": "https://placekitten.com",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://placekitten.com/",
+      "tags": [
+        "placeholder",
+        "images",
+        "cats",
+        "development"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 100,
+      "uptime": 99.80
+    },
+    {
+      "id": "lorempicsum",
+      "name": "Lorem Picsum",
+      "description": "Beautiful placeholder images",
+      "category": "Development Tools",
+      "baseUrl": "https://picsum.photos",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://picsum.photos/",
+      "tags": [
+        "placeholder",
+        "images",
+        "photos",
+        "development"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 120,
+      "uptime": 99.90
+    },
+    {
+      "id": "numbersapi",
+      "name": "Numbers API",
+      "description": "Interesting facts about numbers",
+      "category": "Education",
+      "baseUrl": "http://numbersapi.com",
+      "authType": "none",
+      "cors": true,
+      "https": false,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "http://numbersapi.com/",
+      "tags": [
+        "numbers",
+        "facts",
+        "math",
+        "trivia"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 80,
+      "uptime": 99.70
+    },
+    {
+      "id": "coincap",
+      "name": "CoinCap",
+      "description": "Real-time cryptocurrency market data",
+      "category": "Finance & Markets",
+      "baseUrl": "https://api.coincap.io/v2",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "200 requests/minute",
+      "pricing": "freemium",
+      "documentation": "https://docs.coincap.io/",
+      "tags": [
+        "crypto",
+        "cryptocurrency",
+        "market",
+        "prices"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 95,
+      "uptime": 99.90
+    },
+    {
+      "id": "countrystatecity",
+      "name": "Country State City",
+      "description": "Database of countries, states, and cities",
+      "category": "Maps & Location",
+      "baseUrl": "https://countriesnow.space/api/v0.1",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://countriesnow.space/",
+      "tags": [
+        "countries",
+        "states",
+        "cities",
+        "geography"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 150,
+      "uptime": 99.80
+    },
+    {
+      "id": "datamuse",
+      "name": "Datamuse",
+      "description": "Word-finding query engine",
+      "category": "Education",
+      "baseUrl": "https://api.datamuse.com",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "100,000 requests/day",
+      "pricing": "free",
+      "documentation": "https://www.datamuse.com/api/",
+      "tags": [
+        "words",
+        "rhymes",
+        "synonyms",
+        "language"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 60,
+      "uptime": 99.95
+    },
+    {
+      "id": "colormind",
+      "name": "Colormind",
+      "description": "AI-powered color scheme generator",
+      "category": "Development Tools",
+      "baseUrl": "http://colormind.io/api",
+      "authType": "none",
+      "cors": true,
+      "https": false,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "http://colormind.io/api-access/",
+      "tags": [
+        "colors",
+        "palette",
+        "design",
+        "ai"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 200,
+      "uptime": 99.60
+    },
+    {
+      "id": "breakingbad",
+      "name": "Breaking Bad API",
+      "description": "Breaking Bad TV show data",
+      "category": "Entertainment",
+      "baseUrl": "https://breakingbadapi.com/api",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://breakingbadapi.com/documentation",
+      "tags": [
+        "tv",
+        "breaking-bad",
+        "characters",
+        "episodes"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 85,
+      "uptime": 99.75
+    },
+    {
+      "id": "finalspace",
+      "name": "Final Space API",
+      "description": "Final Space TV show data",
+      "category": "Entertainment",
+      "baseUrl": "https://finalspaceapi.com/api/v0",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://finalspaceapi.com/docs/",
+      "tags": [
+        "tv",
+        "animation",
+        "characters",
+        "episodes"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 75,
+      "uptime": 99.80
+    },
+    {
+      "id": "dicebear",
+      "name": "DiceBear Avatars",
+      "description": "Random avatar generator",
+      "category": "Development Tools",
+      "baseUrl": "https://api.dicebear.com/7.x",
+      "authType": "none",
+      "cors": true,
+      "https": true,
+      "healthStatus": "operational",
+      "lastChecked": "2025-01-20T14:00:00Z",
+      "rateLimit": "Unlimited",
+      "pricing": "free",
+      "documentation": "https://www.dicebear.com/",
+      "tags": [
+        "avatars",
+        "images",
+        "svg",
+        "random"
+      ],
+      "contributors": {
+        "added": "system",
+        "lastValidated": "system"
+      },
+      "responseTime": 50,
+      "uptime": 99.95
     }
   ]
 }

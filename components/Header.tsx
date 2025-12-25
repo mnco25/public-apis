@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import CommandPalette from "@/components/CommandPalette";
+import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -15,6 +17,7 @@ const navigation = [
 
 export default function Header() {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-bg-primary/80 backdrop-blur-xl">
@@ -31,8 +34,8 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Navigation */}
-          <nav className="flex items-center gap-1 bg-bg-secondary p-1 rounded-full border border-border">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1 bg-bg-secondary p-1 rounded-full border border-border">
             {navigation.map((item) => {
               const isActive =
                 item.href === "/"
@@ -65,23 +68,94 @@ export default function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <CommandPalette />
             <ThemeToggle />
 
-            {/* GitHub Link */}
+            {/* GitHub Link - Hidden on mobile */}
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-text-secondary hover:text-text-primary transition-colors hover:bg-bg-secondary rounded-full"
+              className="hidden sm:flex p-2 text-text-secondary hover:text-text-primary transition-colors hover:bg-bg-secondary rounded-full"
               aria-label="View on GitHub"
             >
               <GitHubIcon />
             </a>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors hover:bg-bg-secondary rounded-full"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden border-t border-border bg-bg-primary/95 backdrop-blur-xl overflow-hidden"
+          >
+            <nav className="container-padding py-4 space-y-1">
+              {navigation.map((item, index) => {
+                const isActive =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(item.href) && item.href !== "/";
+
+                return (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={cn(
+                        "block px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                        isActive
+                          ? "bg-accent/10 text-accent"
+                          : "text-text-secondary hover:bg-bg-secondary hover:text-text-primary"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+
+              {/* Mobile GitHub Link */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.15 }}
+              >
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-text-secondary hover:bg-bg-secondary hover:text-text-primary transition-colors"
+                >
+                  <GitHubIcon />
+                  <span>View on GitHub</span>
+                </a>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
