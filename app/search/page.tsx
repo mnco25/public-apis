@@ -1,8 +1,16 @@
+import { Metadata } from "next";
 import { getCategories, searchAPIs } from "@/lib/db";
 import FilterSidebarWrapper from "@/components/FilterSidebarWrapper";
 import APICard from "@/components/APICard";
 import SearchBarWrapper from "@/components/SearchBarWrapper";
 import PaginationWrapper from "@/components/PaginationWrapper";
+
+export const metadata: Metadata = {
+  title: "Browse APIs - Search and Filter",
+  description:
+    "Search and filter through our curated collection of public APIs. Filter by category, pricing, authentication type, and health status to find the perfect API for your project.",
+};
+
 
 interface SearchPageProps {
   searchParams: Promise<{

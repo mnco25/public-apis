@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { CopyUrlButton, ValidateButton } from "@/components/APIDetailActions";
 import APICard from "@/components/APICard";
 import Button from "@/components/Button";
 import HealthBadge from "@/components/HealthBadge";
 import { getCategoryIcon } from "@/components/CategoryIcons";
-import APIPlayground from "@/components/APIPlayground";
 import {
     formatRelativeTime,
     formatResponseTime,
@@ -20,6 +20,15 @@ import {
 } from "@/lib/utils";
 import type { APIEntry } from "@/lib/types";
 import { ArrowLeft, ExternalLink, ShieldCheck, Clock, Activity, Copy, Check } from "lucide-react";
+
+// Dynamic import for heavy components
+const APIPlayground = dynamic(() => import("@/components/APIPlayground"), {
+    loading: () => (
+        <div className="mt-6 p-8 rounded-xl border border-border bg-card text-center">
+            <p className="text-text-secondary">Loading playground...</p>
+        </div>
+    ),
+});
 
 // Animation Variants
 const containerVariants = {

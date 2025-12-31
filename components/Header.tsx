@@ -2,12 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import CommandPalette from "@/components/CommandPalette";
 import { Menu, X } from "lucide-react";
+
+// Dynamic import for heavy components
+const CommandPalette = dynamic(() => import("@/components/CommandPalette"), {
+  ssr: false,
+});
 
 const navigation = [
   { name: "Home", href: "/" },
