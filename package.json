@@ -10,6 +10,7 @@
     "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "@vercel/og": "^0.8.6",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
